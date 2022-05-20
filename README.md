@@ -1,7 +1,7 @@
 # Sistema para Biblioteca
 
 ## 📷 Screenshot
-![Screen Shoot](https://super.abril.com.br/wp-content/uploads/2018/04/bibliotecas.png)
+![Screen Shoot](<img height="180em" src="[https://super.abril.com.br/wp-content/uploads/2018/04/bibliotecas.png"/>)
 
 ## 📋 Descrição do projeto
 Imagina que legal que seria se você pudesse personalizar seu cartão do Nubank do jeito que quiser?! Enquanto isso não é possível, criei uma aplicação muito legal utilizando somente HTML, CSS e JavaScript, com ela é possível alterar o nome do cartão, cor, modelo e até mesmo a logo.
