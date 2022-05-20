@@ -4,17 +4,17 @@
 <img src="https://super.abril.com.br/wp-content/uploads/2018/04/bibliotecas.png" width="250">
 
 ## 📋 Descrição do projeto
-Imagina que legal que seria se você pudesse personalizar seu cartão do Nubank do jeito que quiser?! Enquanto isso não é possível, criei uma aplicação muito legal utilizando somente HTML, CSS e JavaScript, com ela é possível alterar o nome do cartão, cor, modelo e até mesmo a logo.
+O projeto consiste em um sistema utilizando PHP e MySQL para criar um sistema de controle, emprestimo e cadastro de livros no ambiente escolar.
+Com o sistema é possível cadastrar os alunos, cadastrar os livros, gerar um relatório de quais livros estão com quais alunos, tudo através de interface gráfica.
 
 ## 💻 Tecnologias utilizadas
-- HTML5
-- CSS3/SASS
-- JavaScript
+- XAMPP
+- HTML
+- PHP
+- MySQL
 
 ## 📈 Status do projeto
-✅ Concluído
+- Em progresso
 
 ## 🚀 Links 
-- Design do projeto no Figma: [Link](https://www.figma.com/file/WGLUye16D5FLxy8NSM0ZaE/Projeto_nubank?node-id=0%3A1 "Link")
-- Site em produção: [Link](https://cartao-personalizado.vercel.app/ "Link")
-
+- 
