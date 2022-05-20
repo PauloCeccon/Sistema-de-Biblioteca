@@ -1,6 +1,7 @@
 # Sistema para Biblioteca
 
 ## 📷 Screenshot
+<img src="https://super.abril.com.br/wp-content/uploads/2018/04/bibliotecas.png" width="200">
 ![Screen Shoot](https://super.abril.com.br/wp-content/uploads/2018/04/bibliotecas.png =200x)
 
 ## 📋 Descrição do projeto
