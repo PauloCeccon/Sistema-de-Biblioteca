@@ -1,7 +1,7 @@
 # Sistema para Biblioteca
 
 ## 📷 Screenshot
-[![Screenshot](https://www.google.com/url?sa=i&url=https%3A%2F%2Fsuper.abril.com.br%2Fcoluna%2Fliteral%2Fuma-das-bibliotecas-mais-legais-do-mundo-e-brasileira%2F&psig=AOvVaw1KEOLPgLmkUcysB9NbJc9r&ust=1653138864914000&source=images&cd=vfe&ved=0CAkQjRxqFwoTCKjM4aqU7vcCFQAAAAAdAAAAABAJ)]
+![Screen Shoot]([https://github.com/PauloCeccon/PauloCeccon/blob/output/github-contribution-grid-snake.svg](https://super.abril.com.br/wp-content/uploads/2018/04/bibliotecas.png))
 
 ## 📋 Descrição do projeto
 Imagina que legal que seria se você pudesse personalizar seu cartão do Nubank do jeito que quiser?! Enquanto isso não é possível, criei uma aplicação muito legal utilizando somente HTML, CSS e JavaScript, com ela é possível alterar o nome do cartão, cor, modelo e até mesmo a logo.
