@@ -11,8 +11,8 @@ $funcionario = 1;
 
 require_once("$arq4");
 
-$usuarioDigitado = $_POST['usuario'];
-$senhaDigitada = $_POST['senha'];
+$usuarioDigitado = $_POST['usuario_login'];
+$senhaDigitada = $_POST['senha_login'];
 $servidor = 'localhost';
 $bd = 'fatec';
 
