@@ -10,6 +10,7 @@ Com o sistema é possível cadastrar os alunos, cadastrar os livros, gerar um re
 ## 💻 Tecnologias utilizadas
 - XAMPP
 - HTML
+- CSS
 - PHP
 - MySQL
 
