@@ -5,6 +5,7 @@ $arq = "RegistroDeEmprestimos.txt";
 $arq1 = "pegaUsr.php";
 $arq2 = "emprestarLivro.php";
 $arq3="sair.php";
+$DateAndTime = date('d-m-Y h:i:s a', time());
 
 require_once("$arq0");
 
@@ -30,8 +31,8 @@ else
 	if($tombo!=0) {
 		echo "<br> Gravando em arquivo:<br>";
 		echo "<br>------------------------------------------------------------------------------";
-
-		fwrite($handle,"Livro: $tombo\n>");
+		
+		fwrite($handle,">Livro: $tombo | Emprestado: $DateAndTime | Por: $usuario | \n");
 		fclose($handle);
 
 		echo "<br>";
@@ -60,16 +61,18 @@ function mostraLivros($tab, $arq, $conexão){
 		echo <<<_TEXTO
 		<pre>
 
-		Autor	$linha[0]
-		Título	$linha[1]
-		Área	$linha[2]
-		Ano	$linha[3]
-		Tombo	$linha[4]
+		ID	    $linha[0]
+		Autor	$linha[1]
+		Título	$linha[2]
+		Área	$linha[3]
+		Ano	    $linha[4]
+		Tombo	$linha[5]
 		</pre>
 
 		<form name = "emprestar" action="$arq" method="post">
-		<input type ="hidden" name="Tombo" value="$linha[4]">
+		<input type ="hidden" name="Tombo" value="$linha[5]">
 		<input type ="submit" value="Emprestar"></form>
+		---------------------------------------------------------------
 _TEXTO;
 		}
 	if (isset ($_POST['Tombo'])) $tombo = $_POST['Tombo'];

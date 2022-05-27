@@ -21,7 +21,6 @@ if (isset($_POST['apagar']) && isset($_POST['tombo']))
 	}
 
 	// ************* Inserir dados na tabela ************* 
-
 if (isset($_POST['autor'])
 	&&
 	isset($_POST['titulo'])
@@ -40,7 +39,7 @@ if (isset($_POST['autor'])
 	$ano 	= get_post($conexão, 'ano');
 	$tombo 	= get_post($conexão, 'tombo');
 
-	$query	= "INSERT INTO $tab VALUES"."('$autor', '$titulo', '$area', '$ano', '$tombo')";	
+	$query	= "INSERT INTO $tab VALUES"."('','$autor', '$titulo', '$area', '$ano', '$tombo')";	
 		
 	$resultado 	= $conexão->query($query);
 
@@ -49,6 +48,7 @@ if (isset($_POST['autor'])
 	
 }
 
+//Sair
 echo <<<_TEXTO1
 <form name = "sair" action="$arq1" method="post">
 <input type="submit" value="Sair"></form>
@@ -56,7 +56,6 @@ _TEXTO1;
 
 
 // ************* Montar os formulários para entrada de dados na tabela *************
-
 echo <<<_END
 <form action="$arq" method="post">
 <pre>
@@ -93,17 +92,16 @@ for ($j = 0 ; $j < $linhas ; ++$j)
 	$linha = $resultado->fetch_array(MYSQLI_NUM);
 	echo <<<_END
 <pre>
-
-
-	Autor  $linha[0]
-	Título $linha[1]
-	Área   $linha[2]
-	Ano    $linha[3]
-	Tombo  $linha[4]
+	ID     $linha[0]
+	Autor  $linha[1]
+	Título $linha[2]
+	Área   $linha[3]
+	Ano    $linha[4]
+	Tombo  $linha[5]
 </pre>
 	<form action="$arq" method="post">
 	<input type="hidden" name="apagar" value="yes">
-	<input type="hidden" name="tombo" value="$linha[4]">
+	<input type="hidden" name="tombo" value="$linha[5]">
 	<input type="submit" value="Apagar Registro"></form>
 _END;
 	echo "        ------------------------";
