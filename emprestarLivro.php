@@ -3,7 +3,7 @@ header('Content-Type: text/html; charset=utf-8');
 $arqSenhas="senhas.php";
 $arq = "RegistroDeEmprestimos.txt";
 $arqPegaUsr = "pegaUsr.php";
-$arq2 = "emprestarLivro.php";
+$arqEmprestarLivro = "emprestarLivro.php";
 $arq3="sair.php";
 $DateAndTime = date('d-m-Y h:i:s a', time());
 
@@ -23,7 +23,7 @@ else
 	$conexão = new mysqli($servidor, $usuario, $senha, $bd);
 	if ($conexão->connect_error) die($conexão->connect_error);
 
-	$tombo = mostraLivros($tab, $arq2, $conexão);
+	$tombo = mostraLivros($tab, $arqEmprestarLivro, $conexão);
 
 	// $handle ---> modo a+: escrita; cursor no fim; o texto existente não é sobrescrito
 	$handle = fopen("$arq","a+");

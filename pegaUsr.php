@@ -2,7 +2,7 @@
 
 $arqSenhas="senhas.php";
 $arqLogin="login.html";
-$arq2 = "emprestarLivro.php";
+$arqEmprestarLivro = "emprestarLivro.php";
 $arq3 = "fazTudo.php";
 $arq4="senhas_admin.php";
 $tab="livros";
@@ -37,8 +37,8 @@ if ($usuarioDigitado == "" or $senhaDigitada == "")
 		
 		if ($nivel == $admin)
 			header("Location: $arq3");
-		else if ($nivel == $funcionario) header("Location: $arq2");
-			//{$arq = $arq2;	mostraLivros($tab, $arq2, $conexão);}
+		else if ($nivel == $funcionario) header("Location: $arqEmprestarLivro");
+			//{$arq = $arqEmprestarLivro;	mostraLivros($tab, $arqEmprestarLivro, $conexão);}
 		else header("Location: $arqLogin");
 		}
 		}
