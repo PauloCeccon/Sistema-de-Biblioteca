@@ -1,10 +1,10 @@
 <?php
-$arq1="login.html";
+$arqLogin="login.html";
 
 //$_SESSION['usuarioDigitado'] = '';
 //$_SESSION['senhaDigitada'] = '';
 $usuarioDigitado = '';
 $senhaDigitada = '';
 
-header("Location: $arq1");
+header("Location: $arqLogin");
 ?>

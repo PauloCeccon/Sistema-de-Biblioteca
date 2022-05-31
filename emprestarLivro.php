@@ -2,7 +2,7 @@
 header('Content-Type: text/html; charset=utf-8');
 $arqSenhas="senhas.php";
 $arq = "RegistroDeEmprestimos.txt";
-$arq1 = "pegaUsr.php";
+$arqPegaUsr = "pegaUsr.php";
 $arq2 = "emprestarLivro.php";
 $arq3="sair.php";
 $DateAndTime = date('d-m-Y h:i:s a', time());
@@ -15,7 +15,7 @@ echo <<<_TEXTO1
 _TEXTO1;
 
 if ($_usuarioDigitado = '' or $senhaDigitada = '')
-	header("Location: $arq1");
+	header("Location: $arqPegaUsr");
 else
 {
 	$tab="livros";

@@ -1,7 +1,7 @@
 <?php
 
 $arqSenhas="senhas.php";
-$arq1="login.html";
+$arqLogin="login.html";
 $arq2 = "emprestarLivro.php";
 $arq3 = "fazTudo.php";
 $arq4="senhas_admin.php";
@@ -19,7 +19,7 @@ $bd = 'fatec';
 if ($usuarioDigitado == "" or $senhaDigitada == "")
 	{
 
-	header("Location: $arq1");
+	header("Location: $arqLogin");
 	}
 	else
 	{
@@ -30,7 +30,7 @@ if ($usuarioDigitado == "" or $senhaDigitada == "")
 	if (!$resultado) 
 		die ("Erro de acesso à base de dados: " . $conexão->error);
 	if (empty($resultado->data_seek(0)))
-		header("Location: $arq1");
+		header("Location: $arqLogin");
 		else
 		{
 		$nivel = $resultado->fetch_assoc()['nivel'];
@@ -39,7 +39,7 @@ if ($usuarioDigitado == "" or $senhaDigitada == "")
 			header("Location: $arq3");
 		else if ($nivel == $funcionario) header("Location: $arq2");
 			//{$arq = $arq2;	mostraLivros($tab, $arq2, $conexão);}
-		else header("Location: $arq1");
+		else header("Location: $arqLogin");
 		}
 		}
 	$resultado->close();

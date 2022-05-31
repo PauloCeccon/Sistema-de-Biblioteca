@@ -4,7 +4,7 @@ require_once 'senhas_admin.php';
 $conexão = new mysqli($servidor, $usuario, $senha, $bd);
 $tab="livros";
 $arq = "fazTudo.php";
-$arq1 = "sair.php";
+$arqPegaUsr = "sair.php";
 
 if ($conexão->connect_error) die($conexão->connect_error);
 
@@ -50,7 +50,7 @@ if (isset($_POST['autor'])
 
 //Sair
 echo <<<_TEXTO1
-<form name = "sair" action="$arq1" method="post">
+<form name = "sair" action="$arqPegaUsr" method="post">
 <input type="submit" value="Sair"></form>
 _TEXTO1;
 
