@@ -1,13 +1,13 @@
 <?php
 header('Content-Type: text/html; charset=utf-8');
-$arq0="senhas.php";
+$arqSenhas="senhas.php";
 $arq = "RegistroDeEmprestimos.txt";
 $arq1 = "pegaUsr.php";
 $arq2 = "emprestarLivro.php";
 $arq3="sair.php";
 $DateAndTime = date('d-m-Y h:i:s a', time());
 
-require_once("$arq0");
+require_once("$arqSenhas");
 
 echo <<<_TEXTO1
 <form name = "sair" action="$arq3" method="post">

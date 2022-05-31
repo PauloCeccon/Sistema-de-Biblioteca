@@ -1,6 +1,6 @@
 <?php
 
-$arq0="senhas.php";
+$arqSenhas="senhas.php";
 $arq1="login.html";
 $arq2 = "emprestarLivro.php";
 $arq3 = "fazTudo.php";

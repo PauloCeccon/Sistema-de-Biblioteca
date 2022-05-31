@@ -1,10 +1,10 @@
 <?php
 header('Content-Type: text/html; charset=utf-8');
-$arq0="senhas.php";
+$arqSenhas="senhas.php";
 $arq3="sair.php";
 $arq4="registraEmprDevol.php";
 
-require_once("$arq0");
+require_once("$arqSenhas");
 
 echo <<<_TEXTO1
 <form name = "emprestaDevolve" action="$arq4" method="post">
