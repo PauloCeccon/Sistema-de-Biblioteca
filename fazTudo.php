@@ -2,8 +2,8 @@
 header('Content-Type: text/html; charset=utf-8');
 require_once 'senhas_admin.php';
 $conexão = new mysqli($servidor, $usuario, $senha, $bd);
-$tab="livros";
-$arq = "fazTudo.php";
+$tabLivros="livros";
+$arqFazTudo = "fazTudo.php";
 $arqPegaUsr = "sair.php";
 
 if ($conexão->connect_error) die($conexão->connect_error);
@@ -13,7 +13,7 @@ if ($conexão->connect_error) die($conexão->connect_error);
 if (isset($_POST['apagar']) && isset($_POST['tombo']))
 {
 	$tombo = get_post($conexão, 'tombo');
-	$query= "DELETE FROM $tab WHERE tombo='$tombo'";
+	$query= "DELETE FROM $tabLivros WHERE tombo='$tombo'";
 	$resultado = $conexão->query($query);
 		
 	if (!$resultado) echo "Erro ao remover dados: $query<br>" .
@@ -39,7 +39,7 @@ if (isset($_POST['autor'])
 	$ano 	= get_post($conexão, 'ano');
 	$tombo 	= get_post($conexão, 'tombo');
 
-	$query	= "INSERT INTO $tab VALUES"."('','$autor', '$titulo', '$area', '$ano', '$tombo')";	
+	$query	= "INSERT INTO $tabLivros VALUES"."('','$autor', '$titulo', '$area', '$ano', '$tombo')";	
 		
 	$resultado 	= $conexão->query($query);
 
@@ -57,7 +57,7 @@ _TEXTO1;
 
 // ************* Montar os formulários para entrada de dados na tabela *************
 echo <<<_END
-<form action="$arq" method="post">
+<form action="$arqFazTudo" method="post">
 <pre>
 <br>
 Indique os livros a incluir:
@@ -66,7 +66,7 @@ Indique os livros a incluir:
 	Área   <input type="text" name="area">    Ano    <input type="text" name="ano">
 	<br>
 	Tombo  <input type="text" name="tombo">
-	<form name = "adicionar" action="$arq" method="post">
+	<form name = "adicionar" action="$arqFazTudo" method="post">
 	<input type="submit" value="Adicionar Registro">
 </pre></form>
 _END;
@@ -74,7 +74,7 @@ _END;
 //  ************* Mostrar os livros existentes na tabela                *************
 //  ************* Note que o botão de apagar é colocado para cada registro.*************
 
-$query= "SELECT * FROM $tab";
+$query= "SELECT * FROM $tabLivros";
 
 $resultado = $conexão->query($query);
 
@@ -99,7 +99,7 @@ for ($j = 0 ; $j < $linhas ; ++$j)
 	Ano    $linha[4]
 	Tombo  $linha[5]
 </pre>
-	<form action="$arq" method="post">
+	<form action="$arqFazTudo" method="post">
 	<input type="hidden" name="apagar" value="yes">
 	<input type="hidden" name="tombo" value="$linha[5]">
 	<input type="submit" value="Apagar Registro"></form>

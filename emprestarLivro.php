@@ -1,16 +1,16 @@
 <?php
 header('Content-Type: text/html; charset=utf-8');
 $arqSenhas="senhas.php";
-$arq = "RegistroDeEmprestimos.txt";
+$arqRegistroEmprestimos = "RegistroDeEmprestimos.txt";
 $arqPegaUsr = "pegaUsr.php";
 $arqEmprestarLivro = "emprestarLivro.php";
-$arq3="sair.php";
+$arqSair="sair.php";
 $DateAndTime = date('d-m-Y h:i:s a', time());
 
 require_once("$arqSenhas");
 
 echo <<<_TEXTO1
-<form name = "sair" action="$arq3" method="post">
+<form name = "sair" action="$arqSair" method="post">
 <input type="submit" value="Sair"></form>
 _TEXTO1;
 
@@ -18,15 +18,15 @@ if ($_usuarioDigitado = '' or $senhaDigitada = '')
 	header("Location: $arqPegaUsr");
 else
 {
-	$tab="livros";
+	$tabLivros="livros";
 
 	$conexão = new mysqli($servidor, $usuario, $senha, $bd);
 	if ($conexão->connect_error) die($conexão->connect_error);
 
-	$tombo = mostraLivros($tab, $arqEmprestarLivro, $conexão);
+	$tombo = mostraLivros($tabLivros, $arqEmprestarLivro, $conexão);
 
 	// $handle ---> modo a+: escrita; cursor no fim; o texto existente não é sobrescrito
-	$handle = fopen("$arq","a+");
+	$handle = fopen("$arqRegistroEmprestimos","a+");
 
 	if($tombo!=0) {
 		echo "<br> Gravando em arquivo:<br>";
@@ -43,9 +43,9 @@ else
 
 }
 
-function mostraLivros($tab, $arq, $conexão){
+function mostraLivros($tabLivros, $arqRegistroEmprestimos, $conexão){
 		//  ************* Mostrar os livros existentes *************
-		$query= "SELECT * FROM $tab";
+		$query= "SELECT * FROM $tabLivros";
 		$resultado = $conexão->query($query);
 		if (!$resultado) die ("Erro de acesso à base de dados: " . $conexão->error);
 		
@@ -69,7 +69,7 @@ function mostraLivros($tab, $arq, $conexão){
 		Tombo	$linha[5]
 		</pre>
 
-		<form name = "emprestar" action="$arq" method="post">
+		<form name = "emprestar" action="$arqRegistroEmprestimos" method="post">
 		<input type ="hidden" name="Tombo" value="$linha[5]">
 		<input type ="submit" value="Emprestar"></form>
 		---------------------------------------------------------------

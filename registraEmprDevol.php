@@ -1,13 +1,13 @@
 <?php
 header('Content-Type: text/html; charset=utf-8');
 $arqSenhas="senhas.php";
-$arq3="sair.php";
-$arq4="registraEmprDevol.php";
+$arqSair="sair.php";
+$arqRegistraEmprDevol="registraEmprDevol.php";
 
 require_once("$arqSenhas");
 
 echo <<<_TEXTO1
-<form name = "emprestaDevolve" action="$arq4" method="post">
+<form name = "emprestaDevolve" action="$arqRegistraEmprDevol" method="post">
 	<fieldset>
 		<legend>Registro de Empréstimo / Devolução:</legend>
 		Usuario:	<input type="text" name="usuario"><br>
@@ -22,7 +22,7 @@ echo <<<_TEXTO1
 	</fieldset>
 </form>
 <br>
-<form name = "Sair" action="$arq3" method="post">
+<form name = "Sair" action="$arqSair" method="post">
 <input type="submit" value="Sair"></form>
 _TEXTO1;
  
