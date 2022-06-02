@@ -8,6 +8,7 @@ $arqSenhasAdmin="senhas_admin.php";
 $tabLivros="livros";
 $admin = 0;
 $funcionario = 1;
+$cliente = 2;
 
 require_once("$arqSenhasAdmin");
 
